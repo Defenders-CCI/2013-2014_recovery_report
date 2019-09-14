@@ -3014,7 +3014,7 @@ Photo courtesy of National Park Service.
 </div>
 <div id="updated-estimate" class="section level2">
 <h2>Updated estimate</h2>
-<p>To update Gerber’s calculation, we derived an independent estimate using the <a href="https://www.fws.gov/endangered/esa-library/pdf/Recovery_Report_FY2013-2014.pdf">2013-2014 recovery report to Congress</a>; see <a href="#calculations">Calculations, below</a>. Using the per-species cost of recovery and the time-to-recovery data in the report, we estimate the total cost of recovery at <strong>$1.62 billion per year</strong>. In brief, the total recovery cost is estimated at $9.4 billion for 481 species with estimates in the report, for an estimated per-species cost of approximately $19.5 million. Multiplying the per-species cost by the count of 1,662 currently listed species, we estimate total recovery cost for ESA-listed species at $32.5 billion. Dividing that by the median time-to-recovery of 20 years—also calculated from the recovery report—we estimate $1.62 billion per year to carry out the recovery actions needed for all current ESA-listed species.</p>
+<p>To update Gerber’s calculation, we derived an independent estimate using the <a href="https://www.fws.gov/endangered/esa-library/pdf/Recovery_Report_FY2013-2014.pdf">2013-2014 recovery report to Congress</a>; see <a href="#calculations">Calculations, below</a>. Using the Service’s estimates of species cost of recovery and the time-to-recovery data in the report, we estimate the total cost of carrying out all recovery actions at <span style="background-color:yellow"><strong>$1.62 billion per year</strong></span>. In brief, the total recovery cost is estimated at $9.4 billion for 481 species with estimates in the report, for an estimated per-species cost of approximately $19.5 million. Multiplying the per-species cost by the count of 1,662 currently listed species, we estimate total recovery cost for ESA-listed species at $32.5 billion. Dividing that by the median time-to-recovery of 20 years—also calculated from the recovery report—we estimate $1.62 billion per year to carry out the recovery actions needed for all current ESA-listed species. The 95% confidence interval, based on 1,000 bootstrap replicates, is $1.22 to $2.06 billion per year.</p>
 </div>
 <div id="funding-sources" class="section level2">
 <h2>Funding sources</h2>
@@ -3050,20 +3050,20 @@ Photo courtesy of National Park Service.
 <a class="sourceLine" id="cb7-8" data-line-number="8"></a>
 <a class="sourceLine" id="cb7-9" data-line-number="9"><span class="kw">quantile</span>(resamp_vals, <span class="kw">c</span>(<span class="fl">0.01</span>, <span class="fl">0.025</span>, <span class="fl">0.05</span>, <span class="fl">0.25</span>, <span class="fl">0.5</span>, <span class="fl">0.75</span>, <span class="fl">0.95</span>, <span class="fl">0.975</span>, <span class="fl">0.99</span>))</a></code></pre></div>
 <pre><code>##       1%     2.5%       5%      25%      50%      75%      95%    97.5% 
-## 14246507 14851661 15495311 17691200 19259424 21031858 23646287 24409677 
+## 14042390 14583927 15608806 17677369 19501334 21361123 24146613 24799058 
 ##      99% 
-## 25435087</code></pre>
+## 26010737</code></pre>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="kw">quantile</span>(resamp_vals, <span class="kw">c</span>(<span class="fl">0.025</span>, <span class="fl">0.975</span>))</a></code></pre></div>
 <pre><code>##     2.5%    97.5% 
-## 14851661 24409677</code></pre>
+## 14583927 24799058</code></pre>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1">LCL &lt;-<span class="st"> </span><span class="kw">quantile</span>(resamp_vals, <span class="fl">0.025</span>) <span class="op">*</span><span class="st"> </span><span class="dv">1662</span></a>
 <a class="sourceLine" id="cb11-2" data-line-number="2">UCL &lt;-<span class="st"> </span><span class="kw">quantile</span>(resamp_vals, <span class="fl">0.975</span>) <span class="op">*</span><span class="st"> </span><span class="dv">1662</span></a>
 <a class="sourceLine" id="cb11-3" data-line-number="3">LCL <span class="op">/</span><span class="st"> </span>median_est_time</a></code></pre></div>
 <pre><code>##       2.5% 
-## 1234173044</code></pre>
+## 1211924323</code></pre>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1">UCL <span class="op">/</span><span class="st"> </span>median_est_time</a></code></pre></div>
 <pre><code>##      97.5% 
-## 2028444123</code></pre>
+## 2060801736</code></pre>
 </div>
 <div class="footnotes">
 <hr />
